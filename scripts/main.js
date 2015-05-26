@@ -16,17 +16,19 @@ var i;
 
 function forEach(list, callback) {
 	for (i = 0; i < list.length; i++){
-		callback();
+		callback(list[i]);
 	}
 };
 
 
-forEach(places, function() {
-		console.log('I want to go to ' + places[i].city + ', ' + places[i].country);
+forEach(places, function(place) {
+	console.log('I want to go to ' + place.city + ', ' + place.country);
 });
 
 
 // 2. Write your own map, reduce, and filter functions that use your custom forEach to do their work.
+
+
 
 
 //////////////////////////////////////////////////
