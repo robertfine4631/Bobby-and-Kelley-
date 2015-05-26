@@ -12,14 +12,18 @@ var places = [
 { country: 'Mexico', city: 'Durango'}
 ];
 
+var i;
 
 function forEach(list, callback) {
-	for (var i = 0; i < list.length; i++){
-		console.log("I want to go to " + list.city + ", " + list.country);
+	for (i = 0; i < list.length; i++){
+		callback();
 	}
 };
 
 
+forEach(places, function() {
+		console.log('I want to go to ' + places[i].city + ', ' + places[i].country);
+});
 
 
 // 2. Write your own map, reduce, and filter functions that use your custom forEach to do their work.
