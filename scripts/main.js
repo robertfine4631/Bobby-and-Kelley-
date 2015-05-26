@@ -29,7 +29,7 @@ forEach(places, function(place) {
 
 // map
 function map (list, callback) {
-	
+
 	var newArr = [];
 
 	forEach(list, function (li) {
@@ -46,7 +46,7 @@ function map (list, callback) {
 var cities = map(places, function (place) {
 
 	return place.city + " is cool";
- 
+
 });
 
 console.log(cities);
@@ -54,7 +54,7 @@ console.log(cities);
 
 // filter
 function  filter (list, callback) {
-	
+
 	var newArr = [];
 
 	forEach(list, function (li) {
@@ -71,7 +71,7 @@ function  filter (list, callback) {
 var countries = map(places, function (place) {
 
 	return place.country + " is a pretty swell place to go!";
- 
+
 });
 
 console.log(countries);
@@ -82,11 +82,10 @@ console.log(countries);
 function reduce (x, y){
 	var sum = 0;
 	forEach(
-		sum + y;
-		)
+		sum + y);
 	return sum;
-} 
-	
+}
+
 
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -98,16 +97,35 @@ function reduce (x, y){
 
 // 3. Write a function called pluck that extracts a list of property names:
 
-function pluck(list, propertyName) { /* Do stuff*/ }
+function pluck(list, propertyName) {
+  var newArray = [];
+  for(var i = 0; i < list.length; i++) {
+    newArray[i] = list[i][propertyName];
+  }
+  console.log(newArray);
+  return newArray;
+}
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}];
+
 pluck(stooges, 'name');
 // => ["moe", "larry", "curly"]
 
 
 // 4. Write a function called find that looks through each value in the list, returning the first one that passes a truth test (predicate), or undefined if no value passes the test. The function returns as soon as it finds an acceptable element, and doesn't traverse the entire list.
 
-function find(list, predicate) { /* Do stuff */ }
+function find(list, predicate) {
+
+	for (var i = 0; i < list.length; i++) {
+		if (predicate === false) {
+			return undefined;
+		} else if (predicate === true){
+			console.log(list[i]);
+			return list[i];
+		}
+	}
+};
 
 var even = find([1, 2, 3, 4, 5, 6], function(num){ return num % 2 == 0; });
 //=> 2
+console.log(even);
