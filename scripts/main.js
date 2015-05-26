@@ -12,10 +12,9 @@ var places = [
 { country: 'Mexico', city: 'Durango'}
 ];
 
-var i;
 
 function forEach(list, callback) {
-	for (i = 0; i < list.length; i++){
+	for (var i = 0; i < list.length; i++){
 		callback(list[i]);
 	}
 };
@@ -28,8 +27,66 @@ forEach(places, function(place) {
 
 // 2. Write your own map, reduce, and filter functions that use your custom forEach to do their work.
 
+// map
+function map (list, callback) {
+	
+	var newArr = [];
+
+	forEach(list, function (li) {
+
+		newArr.push(callback(li));
+
+	});
+
+	return newArr;
+}
 
 
+
+var cities = map(places, function (place) {
+
+	return place.city + " is cool";
+ 
+});
+
+console.log(cities);
+
+
+// filter
+function  filter (list, callback) {
+	
+	var newArr = [];
+
+	forEach(list, function (li) {
+
+		newArr.push(callback(li));
+
+	});
+
+	return newArr;
+}
+
+
+
+var countries = map(places, function (place) {
+
+	return place.country + " is a pretty swell place to go!";
+ 
+});
+
+console.log(countries);
+
+// reduce
+
+
+function reduce (x, y){
+	var sum = 0;
+	forEach(
+		sum + y;
+		)
+	return sum;
+} 
+	
 
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
